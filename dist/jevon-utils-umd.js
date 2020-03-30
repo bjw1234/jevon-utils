@@ -328,6 +328,10 @@
   }
 
   var __VERSION__ = '1.0.1';
+  /**
+   * 操作 localStorage 的 api
+   * get、set、has、getAll等
+   */
   var store = {
       version: __VERSION__,
       storage: window.localStorage,
