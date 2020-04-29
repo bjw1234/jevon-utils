@@ -1,6 +1,8 @@
 const elementStyle = document.createElement('div').style;
 
-// 得到合适的浏览器前缀
+/**
+ * 得到合适的浏览器前缀，例如：webkit、ms
+ */
 const vendor = (() => {
   let transformNames = {
     webkit: 'webkitTransform',
