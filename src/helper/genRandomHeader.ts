@@ -1,10 +1,10 @@
 /**
  * 生成随机头像
  * 
- * @param size 生成头像大小
+ * @param size 生成头像大小，例如：[90, 90]
  * @param s 头像中的字符
  */
-export const gen_text_img = (size, s: string): string => {
+export const genRandomHeader = (size, s: string): string => {
   if (s.length > 1) {
     s = s.slice(-1); // 字符串默认取最后一个字符
   }

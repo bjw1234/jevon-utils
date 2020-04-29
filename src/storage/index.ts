@@ -1,9 +1,9 @@
-const __VERSION__ = '1.0.1';
-
 /**
- * 操作 localStorage 的 api
+ * 封装操作 localStorage 的 api
  * get、set、has、getAll等
  */
+const __VERSION__ = '1.0.1';
+
 const store: any = {
   version: __VERSION__,
   storage: window.localStorage,
