@@ -8,7 +8,7 @@
     "build": "rollup -c",
     "test-c": "jest --coverage",
     "test": "jest",
-    "docs": "typedoc --out docs src"
+    "docs": "typedoc --out docs src --mode file --hideGenerator "
   },
   "author": "jevon",
   "license": "ISC",
