@@ -8,7 +8,7 @@
  * import { getParamByName } from 'jevon-utils'
  * 
  * const url = 'www.baidu.com?c=aa'
- * getParamByName('c') => 'aa'
+ * getParamByName('c') // => 'aa'
  * ```
  */
 export const getParamByName = (name: string, url?: string): string => {

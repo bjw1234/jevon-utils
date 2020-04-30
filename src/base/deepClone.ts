@@ -3,6 +3,7 @@
  * 对一个对象进行深拷贝
  * 
  * @param obj 对象类型的参数
+ * @returns 生成对象的拷贝
  * 
  * ```js
  * import { deepClone } from 'jevon-utils'

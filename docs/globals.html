@@ -116,7 +116,7 @@
 					<div class="tsd-signature tsd-kind-icon">vendor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> = (() &#x3D;&gt; {const elementStyle &#x3D; document.createElement(&#x27;div&#x27;).stylelet transformNames &#x3D; {webkit: &#x27;webkitTransform&#x27;,Moz: &#x27;MozTransform&#x27;,O: &#x27;OTransform&#x27;,ms: &#x27;msTransform&#x27;,standard: &#x27;transform&#x27;}for (const key in transformNames) {const support &#x3D; elementStyle[transformNames[key]] !&#x3D;&#x3D; undefinedif (support) {return key}}return false})()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/style/prefixStyle.ts#L4">style/prefixStyle.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/style/prefixStyle.ts#L4">style/prefixStyle.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -138,7 +138,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/debounce.ts#L24">helper/debounce.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/debounce.ts#L24">helper/debounce.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -200,7 +200,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/base/deepClone.ts#L18">base/deepClone.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/base/deepClone.ts#L19">base/deepClone.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -214,7 +214,12 @@ logger(<span class="hljs-string">'hello2'</span>)
 									<h5>obj: <span class="tsd-signature-type">object</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>对象类型的参数</p>
-										<pre><code class="language-js"><span class="hljs-keyword">import</span> { deepClone } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<p>生成对象的拷贝</p>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { deepClone } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
 
 <span class="hljs-keyword">const</span> obj = {
   <span class="hljs-attr">name</span>: <span class="hljs-string">'tom'</span>,
@@ -222,10 +227,6 @@ logger(<span class="hljs-string">'hello2'</span>)
 }
 
 <span class="hljs-keyword">const</span> cloneObj = deepClone(obj)</code></pre>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -239,7 +240,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/frontEndDownloadCsv.ts#L33">helper/frontEndDownloadCsv.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/frontEndDownloadCsv.ts#L34">helper/frontEndDownloadCsv.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -272,7 +273,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/frontEndDownloadCsv.ts#L16">helper/frontEndDownloadCsv.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/frontEndDownloadCsv.ts#L17">helper/frontEndDownloadCsv.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -305,7 +306,8 @@ logger(<span class="hljs-string">'hello2'</span>)
 
 <span class="hljs-keyword">const</span> header = [<span class="hljs-string">'ID'</span>,<span class="hljs-string">'name'</span>]
 <span class="hljs-keyword">const</span> content = [[<span class="hljs-string">'1'</span>,<span class="hljs-string">'lemon'</span>],[<span class="hljs-string">'2'</span>,<span class="hljs-string">'lara'</span>]
-frontEndDownloadCsv(header, content)</code></pre>
+frontEndDownloadCsv(header, content)
+<span class="hljs-comment">// 会将内容生成`csv`下载到</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -319,7 +321,7 @@ frontEndDownloadCsv(header, content)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/genRandomHeader.ts#L16">helper/genRandomHeader.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/genRandomHeader.ts#L16">helper/genRandomHeader.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -366,7 +368,7 @@ frontEndDownloadCsv(header, content)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/generateUUID.ts#L14">helper/generateUUID.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/generateUUID.ts#L14">helper/generateUUID.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -395,7 +397,7 @@ frontEndDownloadCsv(header, content)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/getCookie.ts#L13">helper/getCookie.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/getCookie.ts#L13">helper/getCookie.ts:13</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -433,7 +435,7 @@ frontEndDownloadCsv(header, content)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/url/getParamByName.ts#L14">url/getParamByName.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/url/getParamByName.ts#L14">url/getParamByName.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -465,7 +467,7 @@ frontEndDownloadCsv(header, content)</code></pre>
 							<pre><code class="language-js"><span class="hljs-keyword">import</span> { getParamByName } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
 
 <span class="hljs-keyword">const</span> url = <span class="hljs-string">'www.baidu.com?c=aa'</span>
-getParamByName(<span class="hljs-string">'c'</span>) =&gt; <span class="hljs-string">'aa'</span></code></pre>
+getParamByName(<span class="hljs-string">'c'</span>) <span class="hljs-comment">// =&gt; 'aa'</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -479,7 +481,7 @@ getParamByName(<span class="hljs-string">'c'</span>) =&gt; <span class="hljs-str
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/style/prefixStyle.ts#L39">style/prefixStyle.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/style/prefixStyle.ts#L39">style/prefixStyle.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -518,7 +520,7 @@ getParamByName(<span class="hljs-string">'c'</span>) =&gt; <span class="hljs-str
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/readablizeBytes.ts#L17">helper/readablizeBytes.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/readablizeBytes.ts#L17">helper/readablizeBytes.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -560,7 +562,7 @@ val = readablizeBytes(<span class="hljs-number">10240</span> * <span class="hljs
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/scrollToTop.ts#L11">helper/scrollToTop.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/scrollToTop.ts#L11">helper/scrollToTop.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -586,7 +588,7 @@ scrollToTop() <span class="hljs-comment">// 平滑回到页面顶部</span></cod
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/sliceExecData.ts#L19">helper/sliceExecData.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/sliceExecData.ts#L19">helper/sliceExecData.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -652,7 +654,7 @@ scrollToTop() <span class="hljs-comment">// 平滑回到页面顶部</span></cod
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/helper/throttle.ts#L24">helper/throttle.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/helper/throttle.ts#L24">helper/throttle.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -713,7 +715,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 					<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L14">storage/index.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L14">storage/index.ts:14</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -726,7 +728,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L82">storage/index.ts:82</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L82">storage/index.ts:82</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -749,7 +751,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L59">storage/index.ts:59</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L59">storage/index.ts:59</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -772,7 +774,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L25">storage/index.ts:25</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L25">storage/index.ts:25</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -798,7 +800,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L35">storage/index.ts:35</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L35">storage/index.ts:35</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{}</span></h4>
@@ -817,7 +819,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L69">storage/index.ts:69</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L69">storage/index.ts:69</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -840,7 +842,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L47">storage/index.ts:47</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L47">storage/index.ts:47</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -863,7 +865,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L53">storage/index.ts:53</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L53">storage/index.ts:53</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -880,7 +882,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L75">storage/index.ts:75</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L75">storage/index.ts:75</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -903,7 +905,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L15">storage/index.ts:15</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L15">storage/index.ts:15</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -926,7 +928,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 					<div class="tsd-signature tsd-kind-icon">store<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L5">storage/index.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L5">storage/index.ts:5</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -941,7 +943,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<div class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Storage</span><span class="tsd-signature-symbol"> = window.localStorage</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L7">storage/index.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L7">storage/index.ts:7</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -951,7 +953,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;1.0.1&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L6">storage/index.ts:6</a></li>
+								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L6">storage/index.ts:6</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -961,7 +963,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<div class="tsd-signature tsd-kind-icon">session<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L8">storage/index.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L8">storage/index.ts:8</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -970,7 +972,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<div class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Storage</span><span class="tsd-signature-symbol"> = window.sessionStorage</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/87088c2/src/storage/index.ts#L9">storage/index.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/e6d6364/src/storage/index.ts#L9">storage/index.ts:9</a></li>
 								</ul>
 							</aside>
 						</section>

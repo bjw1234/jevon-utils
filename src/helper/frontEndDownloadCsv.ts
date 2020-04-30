@@ -11,6 +11,7 @@
  * const header = ['ID','name']
  * const content = [['1','lemon'],['2','lara']
  * frontEndDownloadCsv(header, content)
+ * // 会将内容生成`csv`下载到
  * ```
  */
 export const frontEndDownloadCsv = (header: Array<string>, content: Array<Array<any>>) => {
