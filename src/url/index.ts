@@ -1,1 +1,1 @@
-export * from './getParamByName';
+export * from './getParamByName'

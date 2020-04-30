@@ -19,28 +19,28 @@ interface ICallbackFunc {
 export const sliceExecData = async (data: Array<any>, len: number, duration: number, promiseFunc: IExecFunc, callback: ICallbackFunc) => {
   if (!data) return;
   if (data.length < len) {
-    const res = await promiseFunc(data);
-    callback(res, 0);
-    return;
+    const res = await promiseFunc(data)
+    callback(res, 0)
+    return
   }
   // 休眠函数
   const sleep = (time: number) => {
     return new Promise((resolve) => {
-      setTimeout(resolve, time);
+      setTimeout(resolve, time)
     })
   }
   // 分片
-  const source = data.slice(); // 数据源
-  let isContinueRun = true; // 异常标记位
+  const source = data.slice() // 数据源
+  let isContinueRun = true // 异常标记位
   while (source.length > 0 && isContinueRun) {
     try {
-      const curData = source.splice(0, len);
-      const res = await promiseFunc(curData);
-      await sleep(duration); // 休眠
-      callback(res, source.length);
+      const curData = source.splice(0, len)
+      const res = await promiseFunc(curData)
+      await sleep(duration) // 休眠
+      callback(res, source.length)
     } catch {
-      callback(null, 0);
-      isContinueRun = false;
+      callback(null, 0)
+      isContinueRun = false
     }
   }
 }

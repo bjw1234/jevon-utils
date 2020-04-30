@@ -1,25 +1,24 @@
-const elementStyle = document.createElement('div').style;
-
 /**
  * 得到合适的浏览器前缀，例如：webkit、ms
  */
 const vendor = (() => {
+  const elementStyle = document.createElement('div').style
   let transformNames = {
     webkit: 'webkitTransform',
     Moz: 'MozTransform',
     O: 'OTransform',
     ms: 'msTransform',
     standard: 'transform'
-  };
+  }
 
   for (const key in transformNames) {
-    const support = elementStyle[transformNames[key]] !== undefined;
+    const support = elementStyle[transformNames[key]] !== undefined
     if (support) {
-      return key;
+      return key
     }
   }
-  return false;
-})();
+  return false
+})()
 
 /**
  * 给某些CSS样式加浏览器前缀
@@ -40,11 +39,11 @@ const vendor = (() => {
  */
 export function prefixStyle(style: string): string {
   if (vendor === false) {
-    return style;
+    return style
   }
   if (vendor === 'standard') {
-    return style;
+    return style
   }
-  let result = vendor + style.charAt(0).toUpperCase() + style.substr(1);
-  return result;
+  let result = vendor + style.charAt(0).toUpperCase() + style.substr(1)
+  return result
 }
