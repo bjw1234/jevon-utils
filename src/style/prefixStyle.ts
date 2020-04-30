@@ -29,12 +29,11 @@ const vendor = (() => {
  * 
  * ```js
  * // 加了合适前缀的CSS属性
- * const TRANSFORM = prefixStyle('transform');
+ * const TRANSFORM = prefixStyle('transform')
  * // ===> webkitTranform
  * 
  * // 使用该CSS属性
- * this.$refs.image.style[TRANSFORM] = `scale(${scale})`;
- *
+ * this.$refs.image.style[TRANSFORM] = `scale(${scale})`
  * ```
  */
 export function prefixStyle(style: string): string {

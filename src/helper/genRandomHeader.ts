@@ -3,6 +3,7 @@
  * 
  * @param size 生成头像大小，例如：[90, 90]
  * @param s 头像中的字符，如果是字符串默认取最后一个字符
+ * @returns 生成头像的`base64`字符串
  * 
  * ```js
  * import { genRandomHeader } from 'jevon-utils'

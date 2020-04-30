@@ -1,6 +1,7 @@
 /**
  * 获取Cookie，注意只能用于浏览器环境
  * @param name cookie的名称
+ * @returns 具体`name`对应的cookie值
  * 
  * ```js
  * import { getCookie } from 'jevon-utils'

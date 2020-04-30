@@ -1,5 +1,6 @@
 /**
  * 生成唯一字符串 UUID
+ * @returns 生成的唯一字符串 
  * 
  * ```js
  * import { generateUUID } from 'jevon-utils'

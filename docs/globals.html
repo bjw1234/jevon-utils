@@ -116,7 +116,7 @@
 					<div class="tsd-signature tsd-kind-icon">vendor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> = (() &#x3D;&gt; {const elementStyle &#x3D; document.createElement(&#x27;div&#x27;).stylelet transformNames &#x3D; {webkit: &#x27;webkitTransform&#x27;,Moz: &#x27;MozTransform&#x27;,O: &#x27;OTransform&#x27;,ms: &#x27;msTransform&#x27;,standard: &#x27;transform&#x27;}for (const key in transformNames) {const support &#x3D; elementStyle[transformNames[key]] !&#x3D;&#x3D; undefinedif (support) {return key}}return false})()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/style/prefixStyle.ts#L4">style/prefixStyle.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/style/prefixStyle.ts#L4">style/prefixStyle.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -138,7 +138,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/debounce.ts#L24">helper/debounce.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/debounce.ts#L24">helper/debounce.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -200,7 +200,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/base/deepClone.ts#L18">base/deepClone.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/base/deepClone.ts#L18">base/deepClone.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -214,7 +214,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 									<h5>obj: <span class="tsd-signature-type">object</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>对象类型的参数</p>
-										<pre><code class="language-js"><span class="hljs-keyword">import</span> { deepClone } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>;
+										<pre><code class="language-js"><span class="hljs-keyword">import</span> { deepClone } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
 
 <span class="hljs-keyword">const</span> obj = {
   <span class="hljs-attr">name</span>: <span class="hljs-string">'tom'</span>,
@@ -239,7 +239,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/frontEndDownloadCsv.ts#L32">helper/frontEndDownloadCsv.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/frontEndDownloadCsv.ts#L33">helper/frontEndDownloadCsv.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -272,7 +272,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/frontEndDownloadCsv.ts#L15">helper/frontEndDownloadCsv.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/frontEndDownloadCsv.ts#L16">helper/frontEndDownloadCsv.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -295,16 +295,17 @@ logger(<span class="hljs-string">'hello2'</span>)
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>生成的CSV的内容体</p>
-											<pre><code class="language-js"><span class="hljs-keyword">import</span> { frontEndDownloadCsv } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
-
-<span class="hljs-keyword">const</span> header = [<span class="hljs-string">'ID'</span>,<span class="hljs-string">'name'</span>]
-<span class="hljs-keyword">const</span> content = [[<span class="hljs-string">'1'</span>,<span class="hljs-string">'lemon'</span>],[<span class="hljs-string">'2'</span>,<span class="hljs-string">'lara'</span>]
-frontEndDownloadCsv(header, content)</code></pre>
 										</div>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<p>无返回值</p>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { frontEndDownloadCsv } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
+
+<span class="hljs-keyword">const</span> header = [<span class="hljs-string">'ID'</span>,<span class="hljs-string">'name'</span>]
+<span class="hljs-keyword">const</span> content = [[<span class="hljs-string">'1'</span>,<span class="hljs-string">'lemon'</span>],[<span class="hljs-string">'2'</span>,<span class="hljs-string">'lara'</span>]
+frontEndDownloadCsv(header, content)</code></pre>
 						</li>
 					</ul>
 				</section>
@@ -318,7 +319,7 @@ frontEndDownloadCsv(header, content)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/genRandomHeader.ts#L15">helper/genRandomHeader.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/genRandomHeader.ts#L16">helper/genRandomHeader.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -341,16 +342,17 @@ frontEndDownloadCsv(header, content)</code></pre>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>头像中的字符，如果是字符串默认取最后一个字符</p>
-											<pre><code class="language-js"><span class="hljs-keyword">import</span> { genRandomHeader } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
-
-<span class="hljs-keyword">const</span> image = genRandomHeader([<span class="hljs-number">90</span>, <span class="hljs-number">90</span>], <span class="hljs-string">'李'</span>)
-<span class="hljs-built_in">console</span>.log(image)
-<span class="hljs-comment">// "data:image/jpeg;base64,/9j......jGOMY4xjjGOMZ/9k="</span></code></pre>
 										</div>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>生成头像的<code>base64</code>字符串</p>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { genRandomHeader } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
+
+<span class="hljs-keyword">const</span> image = genRandomHeader([<span class="hljs-number">90</span>, <span class="hljs-number">90</span>], <span class="hljs-string">'李'</span>)
+<span class="hljs-built_in">console</span>.log(image)
+<span class="hljs-comment">// "data:image/jpeg;base64,/9j......jGOMY4xjjGOMZ/9k="</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -364,21 +366,22 @@ frontEndDownloadCsv(header, content)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/generateUUID.ts#L13">helper/generateUUID.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/generateUUID.ts#L14">helper/generateUUID.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>生成唯一字符串 UUID</p>
 								</div>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { generateUUID } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>生成的唯一字符串</p>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { generateUUID } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
 
 <span class="hljs-keyword">const</span> uuid = generateUUID()
 <span class="hljs-built_in">console</span>.log(uuid)
 
 <span class="hljs-comment">// 44e7cfca-11aa-4dbf-9f24-a1371468e6b5</span></code></pre>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -392,7 +395,7 @@ frontEndDownloadCsv(header, content)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/getCookie.ts#L12">helper/getCookie.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/getCookie.ts#L13">helper/getCookie.ts:13</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -407,15 +410,16 @@ frontEndDownloadCsv(header, content)</code></pre>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>cookie的名称</p>
-											<pre><code class="language-js"><span class="hljs-keyword">import</span> { getCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
-
-<span class="hljs-keyword">const</span> name = getCookie(<span class="hljs-string">'name'</span>)
-<span class="hljs-built_in">console</span>.log(name) <span class="hljs-comment">// test</span></code></pre>
 										</div>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>具体<code>name</code>对应的cookie值</p>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { getCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
+
+<span class="hljs-keyword">const</span> name = getCookie(<span class="hljs-string">'name'</span>)
+<span class="hljs-built_in">console</span>.log(name) <span class="hljs-comment">// test</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -429,7 +433,7 @@ frontEndDownloadCsv(header, content)</code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/url/getParamByName.ts#L12">url/getParamByName.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/url/getParamByName.ts#L14">url/getParamByName.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -452,15 +456,16 @@ frontEndDownloadCsv(header, content)</code></pre>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>传递的URL，如果为空则取 <code>window.location.href</code></p>
-											<pre><code class="language-js"><span class="hljs-keyword">import</span> { getParamByName } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
-
-<span class="hljs-keyword">const</span> url = <span class="hljs-string">'www.baidu.com?c=aa'</span>
-getParamByName(<span class="hljs-string">'c'</span>) =&gt; <span class="hljs-string">'aa'</span></code></pre>
 										</div>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>返回<code>key</code>对应的值</p>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { getParamByName } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
+
+<span class="hljs-keyword">const</span> url = <span class="hljs-string">'www.baidu.com?c=aa'</span>
+getParamByName(<span class="hljs-string">'c'</span>) =&gt; <span class="hljs-string">'aa'</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -474,7 +479,7 @@ getParamByName(<span class="hljs-string">'c'</span>) =&gt; <span class="hljs-str
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/style/prefixStyle.ts#L40">style/prefixStyle.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/style/prefixStyle.ts#L39">style/prefixStyle.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -495,12 +500,11 @@ getParamByName(<span class="hljs-string">'c'</span>) =&gt; <span class="hljs-str
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 							<p>加了浏览器前缀的CSS样式</p>
 							<pre><code class="language-js"><span class="hljs-comment">// 加了合适前缀的CSS属性</span>
-<span class="hljs-keyword">const</span> TRANSFORM = prefixStyle(<span class="hljs-string">'transform'</span>);
+<span class="hljs-keyword">const</span> TRANSFORM = prefixStyle(<span class="hljs-string">'transform'</span>)
 <span class="hljs-comment">// ===&gt; webkitTranform</span>
 
 <span class="hljs-comment">// 使用该CSS属性</span>
-<span class="hljs-keyword">this</span>.$refs.image.style[TRANSFORM] = <span class="hljs-string">`scale(<span class="hljs-subst">${scale}</span>)`</span>;
-</code></pre>
+<span class="hljs-keyword">this</span>.$refs.image.style[TRANSFORM] = <span class="hljs-string">`scale(<span class="hljs-subst">${scale}</span>)`</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -514,7 +518,7 @@ getParamByName(<span class="hljs-string">'c'</span>) =&gt; <span class="hljs-str
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/readablizeBytes.ts#L17">helper/readablizeBytes.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/readablizeBytes.ts#L17">helper/readablizeBytes.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -556,18 +560,19 @@ val = readablizeBytes(<span class="hljs-number">10240</span> * <span class="hljs
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/scrollToTop.ts#L10">helper/scrollToTop.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/scrollToTop.ts#L11">helper/scrollToTop.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>平滑滚动到页面顶部</p>
 								</div>
-								<pre><code class="language-js"><span class="hljs-keyword">import</span> { scrollToTop } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
-
-scrollToTop() <span class="hljs-comment">// 平滑回到页面顶部</span></code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<p>无返回值</p>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { scrollToTop } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
+
+scrollToTop() <span class="hljs-comment">// 平滑回到页面顶部</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -581,7 +586,7 @@ scrollToTop() <span class="hljs-comment">// 平滑回到页面顶部</span></cod
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/sliceExecData.ts#L19">helper/sliceExecData.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/sliceExecData.ts#L19">helper/sliceExecData.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -647,7 +652,7 @@ scrollToTop() <span class="hljs-comment">// 平滑回到页面顶部</span></cod
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/helper/throttle.ts#L23">helper/throttle.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/helper/throttle.ts#L24">helper/throttle.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -679,7 +684,13 @@ scrollToTop() <span class="hljs-comment">// 平滑回到页面顶部</span></cod
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>是否立即执行</p>
-											<pre><code class="language-js"><span class="hljs-keyword">import</span> { throttle } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Function</span></h4>
+							<p>返回被包装的函数</p>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { throttle } <span class="hljs-keyword">from</span> <span class="hljs-string">'jevon-utils'</span>
 
 <span class="hljs-keyword">const</span> log = <span class="hljs-function">(<span class="hljs-params">text</span>) =&gt;</span> {
   <span class="hljs-built_in">console</span>.log(text)
@@ -690,11 +701,6 @@ scrollToTop() <span class="hljs-comment">// 平滑回到页面顶部</span></cod
 logger(<span class="hljs-string">'hello1'</span>)
 logger(<span class="hljs-string">'hello2'</span>)
 <span class="hljs-comment">// 只有 hello1 被输出</span></code></pre>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Function</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -707,7 +713,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 					<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L14">storage/index.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L14">storage/index.ts:14</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -720,7 +726,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L82">storage/index.ts:82</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L82">storage/index.ts:82</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -743,7 +749,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L59">storage/index.ts:59</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L59">storage/index.ts:59</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -766,7 +772,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L25">storage/index.ts:25</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L25">storage/index.ts:25</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -792,7 +798,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L35">storage/index.ts:35</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L35">storage/index.ts:35</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{}</span></h4>
@@ -811,7 +817,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L69">storage/index.ts:69</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L69">storage/index.ts:69</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -834,7 +840,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L47">storage/index.ts:47</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L47">storage/index.ts:47</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -857,7 +863,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L53">storage/index.ts:53</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L53">storage/index.ts:53</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -874,7 +880,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L75">storage/index.ts:75</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L75">storage/index.ts:75</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -897,7 +903,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L15">storage/index.ts:15</a></li>
+										<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L15">storage/index.ts:15</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -920,7 +926,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 					<div class="tsd-signature tsd-kind-icon">store<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L5">storage/index.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L5">storage/index.ts:5</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -935,7 +941,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<div class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Storage</span><span class="tsd-signature-symbol"> = window.localStorage</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L7">storage/index.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L7">storage/index.ts:7</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -945,7 +951,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;1.0.1&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L6">storage/index.ts:6</a></li>
+								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L6">storage/index.ts:6</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -955,7 +961,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 						<div class="tsd-signature tsd-kind-icon">session<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L8">storage/index.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L8">storage/index.ts:8</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -964,7 +970,7 @@ logger(<span class="hljs-string">'hello2'</span>)
 							<div class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Storage</span><span class="tsd-signature-symbol"> = window.sessionStorage</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/33c4d35/src/storage/index.ts#L9">storage/index.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/bjw1234/jevon-utils/blob/8b297e8/src/storage/index.ts#L9">storage/index.ts:9</a></li>
 								</ul>
 							</aside>
 						</section>

@@ -5,6 +5,7 @@
  * @param func 被包装的函数 
  * @param wait 间隔 `wait` 值 
  * @param immediate 是否立即执行 
+ * @returns 返回被包装的函数
  * 
  * ```js
  * import { throttle } from 'jevon-utils'

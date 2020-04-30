@@ -5,7 +5,7 @@
  * @param obj 对象类型的参数
  * 
  * ```js
- * import { deepClone } from 'jevon-utils';
+ * import { deepClone } from 'jevon-utils'
 
  * const obj = { 
  *   name: 'tom', 

@@ -1,5 +1,6 @@
 /**
  * 平滑滚动到页面顶部
+ * @returns 无返回值
  * 
  * ```js
  * import { scrollToTop } from 'jevon-utils'

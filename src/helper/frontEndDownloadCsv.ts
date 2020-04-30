@@ -3,6 +3,7 @@
  * 前端构造数据并下载为CSV文件
  * @param header 生成的CSV表头
  * @param content 生成的CSV的内容体
+ * @returns 无返回值
  * 
  * ```js
  * import { frontEndDownloadCsv } from 'jevon-utils'

@@ -2,6 +2,8 @@
  * 获取URL中的参数
  * @param name 参数key
  * @param url 传递的URL，如果为空则取 `window.location.href`
+ * @returns 返回`key`对应的值
+ * 
  * ```js
  * import { getParamByName } from 'jevon-utils'
  * 
