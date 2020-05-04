@@ -1,13 +1,13 @@
-import { debounce, generateUUID, genRandomHeader, readablizeBytes, throttle } from '../src/index'
+// import { debounce, generateUUID, genRandomHeader, readablizeBytes, throttle } from '../src/index'
 
-const log = (text) => {
-  console.log(text)
-}
+// const log = (text) => {
+//   console.log(text)
+// }
 
-const logger = throttle(log, 2000, true)
+// const logger = throttle(log, 2000, true)
 
-logger('hello1');
-logger('hello2');
+// logger('hello1');
+// logger('hello2');
 
 // 只有 hello1 被输出
 

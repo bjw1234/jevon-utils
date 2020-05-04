@@ -6,11 +6,13 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * 获取URL中的参数
  * @param name 参数key
  * @param url 传递的URL，如果为空则取 `window.location.href`
+ * @returns 返回`key`对应的值
+ *
  * ```js
  * import { getParamByName } from 'jevon-utils'
  *
  * const url = 'www.baidu.com?c=aa'
- * getParamByName('c') => 'aa'
+ * getParamByName('c') // => 'aa'
  * ```
  */
 var getParamByName = function (name, url) {
@@ -29,12 +31,15 @@ var getParamByName = function (name, url) {
  * 前端构造数据并下载为CSV文件
  * @param header 生成的CSV表头
  * @param content 生成的CSV的内容体
- * ```js
- * import { frontEndDownloadCsv } from 'jevon-utils';
+ * @returns 无返回值
  *
- * const header = ['ID','name'];
- * const content = [['1','lemon'],['2','lara'];
- * frontEndDownloadCsv(header, content);
+ * ```js
+ * import { frontEndDownloadCsv } from 'jevon-utils'
+ *
+ * const header = ['ID','name']
+ * const content = [['1','lemon'],['2','lara']
+ * frontEndDownloadCsv(header, content)
+ * // 会将内容生成`csv`下载到
  * ```
  */
 var frontEndDownloadCsv = function (header, content) {
@@ -54,7 +59,7 @@ var frontEndDownloadCsv = function (header, content) {
  * @param response CSV字符串
  */
 var downLoadHelper = function (response) {
-    var blob = new Blob(["\uFEFF" + response], { type: 'text/csv;charset=UTF-8' });
+    var blob = new Blob(["\uFEFF" + response], { type: 'text/csv charset=UTF-8' });
     var blobUrl = window.URL.createObjectURL(blob);
     var a = document.createElement('a');
     var filename = "download-" + new Date().getTime() + ".csv";
@@ -66,51 +71,45 @@ var downLoadHelper = function (response) {
 };
 
 /**
- * 生成唯一字符串 UUID
- */
-var generateUUID = function () {
-    var d = new Date().getTime();
-    if (window.performance && typeof window.performance.now === "function") {
-        d += window.performance.now(); //use high-precision timer if available
-    }
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        var r = (d + Math.random() * 16) % 16 | 0;
-        d = Math.floor(d / 16);
-        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-    });
-    return uuid;
-};
-
-/**
- * 获取Cookie
- * @param name cookie的名称
- */
-var getCookie = function (name) {
-    return document.cookie.match(new RegExp('(^' + name + '| ' + name + ')=([^;]*)')) == null
-        ? ''
-        : RegExp.$2;
-};
-
-/**
  * 平滑滚动到页面顶部
+ * @returns 无返回值
+ *
+ * ```js
+ * import { scrollToTop } from 'jevon-utils'
+ *
+ * scrollToTop() // 平滑回到页面顶部
+ * ```
  */
-var scrollToTop = function (speed) {
-    if (speed === void 0) { speed = 8; }
-    var c = document.documentElement.scrollTop || document.body.scrollTop;
-    if (c > 0) {
+var scrollToTop = function () {
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop > 0) {
         window.requestAnimationFrame(scrollToTop);
-        window.scrollTo(0, c - c / speed);
+        window.scrollTo(0, scrollTop - scrollTop / 8);
     }
 };
 
 /**
- * 防抖函数
+ * 防抖函数，常用于按钮点击，防止短时间内多次点击
  * 多次调用小于 `wait` 值，就会被转化为一次调用
  *
  * @param func 被包装的函数
  * @param wait 间隔 `wait` 值
  * @param immediate 是否立即执行
  * @returns 被包装的函数
+ *
+ * ```js
+ * import { debounce } from 'jevon-utils'
+ *
+ * const log = (text) => {
+ *   console.log(text)
+ * }
+ *
+ * const logger = debounce(log, 2000, true)
+ *
+ * logger('hello1')
+ * logger('hello2')
+ *
+ * ```
  */
 var debounce = function (func, wait, immediate) {
     var timer, context, args;
@@ -153,6 +152,17 @@ var debounce = function (func, wait, immediate) {
  * 将 byte 数据转化为不同单位的值
  * @param bytes 字节值
  * @returns 带单位的字符串
+ *
+ * ```js
+ * import { readablizeBytes } from 'jevon-utils'
+ *
+ * let val = readablizeBytes(1024) // 1024字节
+ * console.log(val) // 1.00KB
+ * val = readablizeBytes(10240 * 1000) // 1024字节
+ * console.log(val) // 9.77MB
+ * val = readablizeBytes(10240 * 1000 * 1000) // 1024字节
+ * console.log(val) // 9.54GB
+ * ```
  */
 var readablizeBytes = function (bytes) {
     if (bytes && bytes !== 0) {
@@ -245,8 +255,10 @@ var sliceExecData = function (data, len, duration, promiseFunc, callback) { retu
                         setTimeout(resolve, time);
                     });
                 };
-                source = data.slice();
-                isContinueRun = true;
+                source = data.slice() // 数据源
+                ;
+                isContinueRun = true // 异常标记位
+                ;
                 _b.label = 3;
             case 3:
                 if (!(source.length > 0 && isContinueRun)) { return [3 /*break*/, 9]; }
@@ -257,7 +269,7 @@ var sliceExecData = function (data, len, duration, promiseFunc, callback) { retu
                 return [4 /*yield*/, promiseFunc(curData)];
             case 5:
                 res = _b.sent();
-                return [4 /*yield*/, sleep(duration)];
+                return [4 /*yield*/, sleep(duration)]; // 休眠
             case 6:
                 _b.sent(); // 休眠
                 callback(res, source.length);
@@ -274,12 +286,27 @@ var sliceExecData = function (data, len, duration, promiseFunc, callback) { retu
 }); };
 
 /**
- * 节流函数
+ * 节流函数，适用场景，文本框输入变化，发起异步请求，对请求的间隔进行限制
  * 多次执行，转化为每隔 `wait` 时间调用一次
  *
  * @param func 被包装的函数
  * @param wait 间隔 `wait` 值
  * @param immediate 是否立即执行
+ * @returns 返回被包装的函数
+ *
+ * ```js
+ * import { throttle } from 'jevon-utils'
+ *
+ * const log = (text) => {
+ *   console.log(text)
+ * }
+ *
+ * const logger = throttle(log, 2000, true)
+ *
+ * logger('hello1')
+ * logger('hello2')
+ * // 只有 hello1 被输出
+ * ```
  */
 var throttle = function (func, wait, immediate) {
     var timer, context;
@@ -306,18 +333,30 @@ var throttle = function (func, wait, immediate) {
 };
 
 /**
- * 生成随机头像
+ * 生成随机头像 [注意：这个方法只能用于浏览器环境]
  *
- * @param size 生成头像大小
- * @param s 头像中的字符
+ * @param size 生成头像大小，例如：[90, 90]
+ * @param s 头像中的字符，如果是字符串默认取最后一个字符
+ * @returns 生成头像的`base64`字符串
+ *
+ * ```js
+ * import { genRandomHeader } from 'jevon-utils'
+ *
+ * const image = genRandomHeader([90, 90], '李')
+ * console.log(image)
+ * // "data:image/jpeg;base64,/9j......jGOMY4xjjGOMZ/9k="
+ * ```
  */
-var gen_text_img = function (size, s) {
+var genRandomHeader = function (size, s) {
     if (s.length > 1) {
         s = s.slice(-1); // 字符串默认取最后一个字符
     }
     var colors = [
         "rgb(239,150,26)", 'rgb(255,58,201)', "rgb(111,75,255)", "rgb(36,174,34)", "rgb(80,80,80)"
     ];
+    if (typeof document === "undefined") {
+        throw new Error("genRandomHeader 只能在浏览器环境使用！");
+    }
     var cvs = document.createElement("canvas");
     cvs.setAttribute('width', size[0]);
     cvs.setAttribute('height', size[1]);
@@ -336,6 +375,18 @@ var gen_text_img = function (size, s) {
  * 对一个对象进行深拷贝
  *
  * @param obj 对象类型的参数
+ * @returns 生成对象的拷贝
+ *
+ * ```js
+ * import { deepClone } from 'jevon-utils'
+
+ * const obj = {
+ *   name: 'tom',
+ *   children: [1, 2, 3, 4]
+ * }
+ *
+ * const cloneObj = deepClone(obj)
+ * ```
  */
 function deepClone(obj) {
     if (!obj || typeof obj !== 'object')
@@ -352,13 +403,12 @@ function deepClone(obj) {
     return _obj;
 }
 
-var __VERSION__ = '1.0.1';
 /**
- * 操作 localStorage 的 api
+ * 封装操作 localStorage 的 api
  * get、set、has、getAll等
  */
 var store = {
-    version: __VERSION__,
+    version: '1.0.1',
     storage: window.localStorage,
     session: {
         storage: window.sessionStorage
@@ -462,16 +512,180 @@ catch (e) {
     store.disabled = true;
 }
 
+/**
+ * 生成唯一字符串 UUID
+ * @returns 生成的唯一字符串
+ *
+ * ```js
+ * import { genRandomUUID } from 'jevon-utils'
+ *
+ * const uuid = genRandomUUID()
+ * console.log(uuid)
+ *
+ * // 44e7cfca-11aa-4dbf-9f24-a1371468e6b5
+ * ```
+ */
+var genRandomUUID = function () {
+    var d = new Date().getTime();
+    if (typeof window === 'object' && window.performance && typeof window.performance.now === "function") {
+        d += window.performance.now(); //use high-precision timer if available
+    }
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
+};
+
+/**
+ * 生成随机颜色
+ * @returns 颜色值
+ *
+ * ```js
+ * import { genRandomColor } from 'jevon-utils'
+ *
+ * genRandomColor() // #720f32
+ * ```
+ */
+var genRandomColor = function () {
+    return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);
+};
+
+/**
+ * 生成在指定范围内[min, max]的随机值
+ * @param max 最大值
+ * @param min 最小值
+ * @returns 随机值
+ *
+ * ```js
+ * import { genRandomNum } from 'jevon-utils'
+ *
+ * genRandomNum(2, 6) // 3
+ * ```
+ */
+var genRandomNum = function (min, max) {
+    if (max < min)
+        { throw new Error('max must greater or equal to min.'); }
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+/**
+ * 获取Cookie，注意只能用于浏览器环境
+ * @param name cookie的名称
+ * @returns 具体`name`对应的cookie值
+ *
+ * ```js
+ * import { getCookie } from 'jevon-utils'
+ *
+ * const name = getCookie('name')
+ * console.log(name) // test
+ * ```
+ */
+var getCookie = function (name) {
+    return document.cookie.match(new RegExp('(^' + name + '| ' + name + ')=([^;]*)')) == null
+        ? ''
+        : RegExp.$2;
+};
+
+/**
+ * 设置cookie，注意只能用于浏览器环境
+ * @param name cookie名称
+ * @param value cookie值
+ * @param days 过期时长，单位：天
+ * @returns 无返回值
+ *
+ * ```js
+ * import { setCookie } from 'jevon-utils'
+ *
+ * // 设置key为name的cookie，过期时长为7天
+ * setCookie('name', 'test', 7)
+ * ```
+ */
+var setCookie = function (name, value, days) {
+    var date = new Date();
+    date.setDate(date.getDate() + days);
+    document.cookie = name + '=' + value + ';expires=' + date;
+};
+
+/**
+ * 删除一个cookie
+ * @param name cookie的key
+ * @returns 无返回值
+ *
+ *```js
+ * import { removeCookie } from 'jevon-utils'
+ *
+ * // 删除cookie
+ * removeCookie('name')
+ * ```
+ */
+var removeCookie = function (name) {
+    setCookie(name, '1', -1);
+};
+
+/**
+ * 得到合适的浏览器前缀，例如：webkit、ms
+ */
+var vendor = (function () {
+    var elementStyle = document.createElement('div').style;
+    var transformNames = {
+        webkit: 'webkitTransform',
+        Moz: 'MozTransform',
+        O: 'OTransform',
+        ms: 'msTransform',
+        standard: 'transform'
+    };
+    for (var key in transformNames) {
+        var support = elementStyle[transformNames[key]] !== undefined;
+        if (support) {
+            return key;
+        }
+    }
+    return false;
+})();
+/**
+ * 给某些CSS样式加浏览器前缀
+ * 适用范围：js给某些DOM添加动画
+ *
+ * @param style CSS样式
+ * @returns 加了浏览器前缀的CSS样式
+ *
+ * ```js
+ * // 加了合适前缀的CSS属性
+ * const TRANSFORM = prefixStyle('transform')
+ * // ===> webkitTranform
+ *
+ * // 使用该CSS属性
+ * this.$refs.image.style[TRANSFORM] = `scale(${scale})`
+ * ```
+ */
+function prefixStyle(style) {
+    if (vendor === false) {
+        return style;
+    }
+    if (vendor === 'standard') {
+        return style;
+    }
+    var result = vendor + style.charAt(0).toUpperCase() + style.substr(1);
+    return result;
+}
+
 exports.debounce = debounce;
 exports.deepClone = deepClone;
 exports.downLoadHelper = downLoadHelper;
 exports.frontEndDownloadCsv = frontEndDownloadCsv;
-exports.gen_text_img = gen_text_img;
-exports.generateUUID = generateUUID;
+exports.genRandomColor = genRandomColor;
+exports.genRandomHeader = genRandomHeader;
+exports.genRandomNum = genRandomNum;
+exports.genRandomUUID = genRandomUUID;
 exports.getCookie = getCookie;
 exports.getParamByName = getParamByName;
+exports.prefixStyle = prefixStyle;
 exports.readablizeBytes = readablizeBytes;
+exports.removeCookie = removeCookie;
 exports.scrollToTop = scrollToTop;
+exports.setCookie = setCookie;
 exports.sliceExecData = sliceExecData;
 exports.store = store;
 exports.throttle = throttle;

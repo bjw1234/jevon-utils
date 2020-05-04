@@ -3,15 +3,15 @@
  * @returns 生成的唯一字符串 
  * 
  * ```js
- * import { generateUUID } from 'jevon-utils'
+ * import { genRandomUUID } from 'jevon-utils'
  *
- * const uuid = generateUUID() 
+ * const uuid = genRandomUUID() 
  * console.log(uuid)
  * 
  * // 44e7cfca-11aa-4dbf-9f24-a1371468e6b5
  * ```
  */
-export const generateUUID = (): string => {
+export const genRandomUUID = (): string => {
   let d = new Date().getTime();
   if (typeof window === 'object' && window.performance && typeof window.performance.now === "function") {
     d += window.performance.now(); //use high-precision timer if available
