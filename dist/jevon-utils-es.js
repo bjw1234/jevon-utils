@@ -222,6 +222,14 @@ function __generator(thisArg, body) {
     }
 }
 
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+}
+
 /**
  * 对输入的数据(数组)进行分片执行
  * 适用范围，接口对请求的数据有长度限制
@@ -329,42 +337,48 @@ var throttle = function (func, wait, immediate) {
 };
 
 /**
- * 生成随机头像 [注意：这个方法只能用于浏览器环境]
+ * 用于比较两个版本号
  *
- * @param size 生成头像大小，例如：[90, 90]
- * @param s 头像中的字符，如果是字符串默认取最后一个字符
- * @returns 生成头像的`base64`字符串
+ * 结果为 `1`: 新版本 大于 旧版本
+ *
+ * 结果为 `0`: 版本号一致
+ *
+ * 结果为 `-1`: 旧版本 大于 新版本
+ *
+ *
+ * @param preVersion 旧版本号
+ * @param lastVersion 新版本号
  *
  * ```js
- * import { genRandomHeader } from 'jevon-utils'
+ * import { versionStringCompare } from 'jevon-utils'
  *
- * const image = genRandomHeader([90, 90], '李')
- * console.log(image)
- * // "data:image/jpeg;base64,/9j......jGOMY4xjjGOMZ/9k="
+ * versionStringCompare('1.1.2', '1.1.4') === 1
+ * versionStringCompare('1.1.2', '1.1.2') === 0
+ * versionStringCompare('1.1.2', '1.1.0') === -1
  * ```
  */
-var genRandomHeader = function (size, s) {
-    if (s.length > 1) {
-        s = s.slice(-1); // 字符串默认取最后一个字符
+var versionStringCompare = function (preVersion, lastVersion) {
+    if (preVersion === void 0) { preVersion = ''; }
+    if (lastVersion === void 0) { lastVersion = ''; }
+    var sources = preVersion === null || preVersion === void 0 ? void 0 : preVersion.split('.');
+    var dests = lastVersion === null || lastVersion === void 0 ? void 0 : lastVersion.split('.');
+    var maxL = Math.max(sources.length, dests.length);
+    var result = 0;
+    for (var i = 0; i < maxL; i++) {
+        var preValue = sources.length > i ? sources[i] : '0';
+        var preNum = isNaN(Number(preValue)) ? preValue.charCodeAt(0) : Number(preValue);
+        var lastValue = dests.length > i ? dests[i] : '0';
+        var lastNum = isNaN(Number(lastValue)) ? lastValue.charCodeAt(0) : Number(lastValue);
+        if (preNum < lastNum) {
+            result = 1;
+            break;
+        }
+        else if (preNum > lastNum) {
+            result = -1;
+            break;
+        }
     }
-    var colors = [
-        "rgb(239,150,26)", 'rgb(255,58,201)', "rgb(111,75,255)", "rgb(36,174,34)", "rgb(80,80,80)"
-    ];
-    if (typeof document === "undefined") {
-        throw new Error("genRandomHeader 只能在浏览器环境使用！");
-    }
-    var cvs = document.createElement("canvas");
-    cvs.setAttribute('width', size[0]);
-    cvs.setAttribute('height', size[1]);
-    var ctx = cvs.getContext("2d");
-    ctx.fillStyle = colors[Math.floor(Math.random() * (colors.length))];
-    ctx.fillRect(0, 0, size[0], size[1]);
-    ctx.fillStyle = 'rgb(255,255,255)';
-    ctx.font = size[0] * 0.6 + "px Arial";
-    ctx.textBaseline = "middle";
-    ctx.textAlign = "center";
-    ctx.fillText(s, size[0] / 2, size[1] / 2);
-    return cvs.toDataURL('image/jpeg', 1);
+    return result;
 };
 
 /**
@@ -567,6 +581,45 @@ var genRandomNum = function (min, max) {
 };
 
 /**
+ * 生成随机头像 [注意：这个方法只能用于浏览器环境]
+ *
+ * @param size 生成头像大小，例如：[90, 90]
+ * @param s 头像中的字符，如果是字符串默认取最后一个字符
+ * @returns 生成头像的`base64`字符串
+ *
+ * ```js
+ * import { genRandomHeader } from 'jevon-utils'
+ *
+ * const image = genRandomHeader([90, 90], '李')
+ * console.log(image)
+ * // "data:image/jpeg;base64,/9j......jGOMY4xjjGOMZ/9k="
+ * ```
+ */
+var genRandomHeader = function (size, s) {
+    if (s.length > 1) {
+        s = s.slice(-1); // 字符串默认取最后一个字符
+    }
+    var colors = [
+        "rgb(239,150,26)", 'rgb(255,58,201)', "rgb(111,75,255)", "rgb(36,174,34)", "rgb(80,80,80)"
+    ];
+    if (typeof document === "undefined") {
+        throw new Error("genRandomHeader 只能在浏览器环境使用！");
+    }
+    var cvs = document.createElement("canvas");
+    cvs.setAttribute('width', size[0]);
+    cvs.setAttribute('height', size[1]);
+    var ctx = cvs.getContext("2d");
+    ctx.fillStyle = colors[Math.floor(Math.random() * (colors.length))];
+    ctx.fillRect(0, 0, size[0], size[1]);
+    ctx.fillStyle = 'rgb(255,255,255)';
+    ctx.font = size[0] * 0.6 + "px Arial";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.fillText(s, size[0] / 2, size[1] / 2);
+    return cvs.toDataURL('image/jpeg', 1);
+};
+
+/**
  * 获取Cookie，注意只能用于浏览器环境
  * @param name cookie的名称
  * @returns 具体`name`对应的cookie值
@@ -667,4 +720,67 @@ function prefixStyle(style) {
     return result;
 }
 
-export { debounce, deepClone, downLoadHelper, frontEndDownloadCsv, genRandomColor, genRandomHeader, genRandomNum, genRandomUUID, getCookie, getParamByName, prefixStyle, readablizeBytes, removeCookie, scrollToTop, setCookie, sliceExecData, store, throttle };
+/**
+ * 加了千分符的字符串(可包含小数位)
+ * @param 字符串格式的数字
+ *
+ *
+ * ```js
+ * import { splitThousands } from 'jevon-utils'
+ *
+ * const number = '2880.25'
+ * splitThousands(number) // '2,880.25'
+ * ```
+ */
+var splitThousands = function (number) {
+    var _a;
+    var decimal = '';
+    var str = number;
+    if (!number)
+        { return ''; }
+    if (number.includes('.')) { // 包含小数位
+        _a = number.split('.'), str = _a[0], decimal = _a[1];
+    }
+    var re = /(?=(?!\b)(\d{3})+$)/g;
+    if (!decimal)
+        { return str.replace(re, ','); }
+    return str.replace(re, ',') + "." + decimal;
+};
+
+/**
+ * 将IP地址转化一个Number类型的数字
+ *
+ * @param ip IP 地址
+ */
+var iP2Number = function (ip) {
+    var result = 0;
+    if (!ip)
+        { return result; }
+    var ipArr = ip.split('.');
+    if (ipArr.length !== 4)
+        { return result; }
+    result += parseInt(ipArr[0], 10) * Math.pow(256, 3);
+    result += parseInt(ipArr[1], 10) * Math.pow(256, 2);
+    result += parseInt(ipArr[2], 10) * Math.pow(256, 1);
+    result += parseInt(ipArr[3], 10);
+    return (result >>> 0);
+};
+
+function maskIp(mask, ip) {
+    return (iP2Number(mask) & iP2Number(ip)) >>> 0;
+}
+
+/**
+ * 数组降维
+ *
+ * @param arr 数组
+ */
+var flattenDeep = function (arr) {
+    if (!Array.isArray(arr))
+        { return [arr]; }
+    return arr.reduce(function (prev, cur) {
+        return __spreadArrays(prev, flattenDeep(cur));
+    }, []);
+};
+
+export { debounce, deepClone, downLoadHelper, flattenDeep, frontEndDownloadCsv, genRandomColor, genRandomHeader, genRandomNum, genRandomUUID, getCookie, getParamByName, iP2Number, maskIp, prefixStyle, readablizeBytes, removeCookie, scrollToTop, setCookie, sliceExecData, splitThousands, store, throttle, versionStringCompare };
