@@ -1,4 +1,4 @@
-// import { debounce, generateUUID, genRandomHeader, readablizeBytes, throttle } from '../src/index'
+import { versionStringCompare } from '../src/index'
 
 // const log = (text) => {
 //   console.log(text)
@@ -22,3 +22,15 @@
 // console.log(val) // 9.77MB
 // val = readablizeBytes(10240 * 1000 * 1000) // 1024字节
 // console.log(val) // 9.54GB
+
+describe('测试基础函数', () => {
+  test(`versionStringCompare('1.1.2', '1.1.4')`, () => {
+    expect(versionStringCompare('1.1.2', '1.1.4')).toEqual(1)
+  });
+  test(`versionStringCompare('1.0.2', '1.0.2')`, () => {
+    expect(versionStringCompare('1.0.2', '1.0.2')).toEqual(0)
+  });
+  test(`versionStringCompare('1.0.2', '1.0.2')`, () => {
+    expect(versionStringCompare('1.0.2', '1.0.1')).toEqual(-1)
+  });
+})
